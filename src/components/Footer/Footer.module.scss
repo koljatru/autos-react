@@ -1,0 +1,8 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+.Footer {
+    background-color: $--black;
+    border-radius: $--border-radius $--border-radius 0 0;
+    margin: 0 25px;
+}

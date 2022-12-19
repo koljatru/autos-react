@@ -1,0 +1,67 @@
+@mixin df-aic {
+    display: flex;
+    align-items: center;
+}
+
+@mixin df-aic-jcc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin df-aic-jcsb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin btn {
+    font-size: $--userfontsize;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+
+@mixin btn-big {
+    height: 65px;
+    line-height: 65px;
+    font-size: $--userfontsize;
+    border-radius: 6px;
+    padding: 0 153px;
+    font-weight: 700;
+    font-family: var(--userfont);
+    background-color: $--red;
+    color: $--white;
+    text-transform: uppercase;
+}
+
+@mixin btn-card {
+    height: 40px;
+    line-height: 40px;
+    font-size: $--userfontsize;
+    border-radius: 6px;
+    padding: 0 56px;
+    font-weight: 400;
+    font-family: var(--userfont);
+}
+
+@mixin btn-all {
+    height: 35px;
+    line-height: 35px;
+    font-size: $--userfontsize;
+    border-radius: 11px;
+    padding: 0 18px;
+    font-weight: 400;
+    font-family: var(--userfont);
+    color: $--white;
+    background-color: $--red;
+}
+
+
+

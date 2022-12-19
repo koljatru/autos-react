@@ -1,0 +1,17 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+.btn {
+    @include btn;
+    @include btn-big;
+}
+
+.btn1 {
+    @include btn;
+    @include btn-card;
+}
+
+.btn2 {
+    @include btn;
+    @include btn-all;
+}

@@ -1,0 +1,39 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+.HeaderTop {
+    background-color: $--gray3;
+
+    .inner {
+        height: 43px;
+        @include df-aic;
+    }
+
+    .item {
+        @include df-aic;
+        font-size: 14px;
+        line-height: 16px;
+
+        &:first-child {
+            margin-right: 228px;
+        }
+
+        &:last-child {
+            margin-left: auto;
+        }
+
+        .link,
+        .text {
+            font-size: 14px;
+            line-height: 16px;
+            color: $--gray1;
+            margin-left: 7px;
+        }
+    }
+}
+
+
+
+
+
+
