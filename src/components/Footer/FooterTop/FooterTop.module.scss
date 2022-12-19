@@ -1,0 +1,14 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+
+.FooterTop {
+    padding: 42px 0 38px;
+    border-bottom: 1px solid rgba($--white, 0.2)
+}
+
+.inner {
+    @include df-aic-jcsb;
+}
+
+
