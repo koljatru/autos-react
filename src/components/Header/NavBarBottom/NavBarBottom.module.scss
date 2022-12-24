@@ -1,0 +1,45 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+.NavBarBottom {
+    
+    .navbarItem{
+       margin-right: 86px;
+       position: relative;
+       
+        &:last-child {
+           margin-right: 0;
+        }
+        
+        svg {
+            cursor: pointer;
+            width: 12px;
+            height: 7px;
+            transition: $--userTransition;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        .navbarLink {
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;   
+        }
+
+        &:hover {
+
+            .navbarLink {
+                color: $--red;
+            }
+
+            svg {
+                transform: scale(1, -1);
+                
+                & path {
+                 fill: $--red;
+                }
+            }
+        }
+    }
+}
+   

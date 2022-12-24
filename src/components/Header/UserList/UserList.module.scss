@@ -1,0 +1,43 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+.UserList {
+    @include df-aic;
+
+    .UserListItem {
+        width: 41px;
+        position: relative;
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0;
+            width: auto;
+        }
+
+        a svg path{
+            transition: $--userTransition;
+        }
+
+        &:hover {
+            a svg path {
+                stroke: $--red;
+            }
+        }
+
+        & .num {
+            margin: 0;
+            font-weight: 700;
+            padding: 2px 6px;
+            font-size: 12px;
+            line-height: 14px;
+            color: $--white;
+            position: absolute;
+            background: $--red;
+            right: -2px;
+            top: -8px;
+            border-radius: 14px;
+            z-index: 1;
+        }
+    }
+    
+}

@@ -11,8 +11,6 @@
 
     .item {
         @include df-aic;
-        font-size: 14px;
-        line-height: 16px;
 
         &:first-child {
             margin-right: 228px;
@@ -22,6 +20,10 @@
             margin-left: auto;
         }
 
+        .link {
+            text-decoration: underline;
+        }
+        
         .link,
         .text {
             font-size: 14px;

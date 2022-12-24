@@ -1,0 +1,32 @@
+@import '../../../assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+.navTopContact {
+    display: flex;
+
+    .contact {
+        @include df-fdc;
+        align-items: flex-end;
+        margin-right: 21px;
+
+        .top{
+            @include df-aic;
+
+            .topTel {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 28px;
+                margin-left: 12px;
+
+            }
+        }
+    }
+
+    button {
+        @include btn-big;
+        @include btn;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 63px;
+    }
+}

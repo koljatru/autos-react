@@ -83,7 +83,39 @@ h5 {
 img {
     width: auto;
     height: auto;
+    vertical-align: middle;
 }
+
+button {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+a {
+    color: inherit;
+    transition: $--userTransition;
+    text-decoration: none;
+    &:hover {
+        color: $--red;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
 
 ::placeholder {
     color: $--black;
