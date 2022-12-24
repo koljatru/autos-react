@@ -1,0 +1,21 @@
+@import '../../../assets/variables.scss';
+
+.navbarTop {
+    
+ .navbarItem{
+    margin-right: 16px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .navbarLink {
+        text-decoration: none;
+        
+        &:hover {
+            color: $--red;
+            text-decoration: underline;
+        }
+    }
+ }
+}

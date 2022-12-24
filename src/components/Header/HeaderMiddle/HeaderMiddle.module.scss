@@ -3,8 +3,82 @@
 
 .HeaderMiddle {
     padding: 18px 0;
+
+    .inner {
+        @include df-aic-jcsb;
+    }
+
+    .left {
+        @include df-aic-jcsb;
+    }
+
+    .burger {
+        width: 28px;
+        height: 22px;
+        @include df-aic-jcc;
+        margin-right: 33px;
+
+        &::before,
+        &:after  {
+            content: "";
+            display: block;
+            height: 4px;
+            width: 100%;
+            background-color: $--black;
+            transition: $--userTransition;
+            border-radius: 4px;
+            position: absolute;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &:after {
+            bottom: 0;
+        }
+
+        .line {
+            display: block;
+            background-color: $--black;
+            height: 4px;
+            width: 100%;
+            border-radius: 2px;
+            transition: $--userTransition;
+        }
+    }
+
+    .logo {
+        padding-right: 40px;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 1px;
+            height: 40px;
+            background-color: $--gray2;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+    }
+
+    .content {
+        margin: 0;
+        max-width: 186px;
+        padding-left: 23px;
+        font-weight: 700;
+
+        & span {
+            color: $--white;
+            background-color: $--red;
+            padding: 0 7px;
+            border-radius: 15px;
+        }
+
+    }
+
 }
 
-.inner {
-    @include df-aic-jcsb;
-}

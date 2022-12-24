@@ -3,6 +3,11 @@
     align-items: center;
 }
 
+@mixin df-fdc {
+    display: flex;
+    flex-direction: column;
+}
+
 @mixin df-aic-jcc {
     display: flex;
     align-items: center;
@@ -26,6 +31,9 @@
     z-index: 1;
     transition: all 0.2s ease-in-out;
     border: none;
+    &:hover {
+        box-shadow: $--box-shadow-btn;
+    }
 }
 
 @mixin btn-big {
