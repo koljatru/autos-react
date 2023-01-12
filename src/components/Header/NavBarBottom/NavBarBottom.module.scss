@@ -7,6 +7,21 @@
        margin-right: 86px;
        position: relative;
        
+       &:hover {
+            & > div {
+            visibility: visible;
+            opacity: 1;
+            }
+           
+             svg {
+               transform: scale(1, -1);
+               
+               & path {
+                fill: $--red;
+               }
+           }
+       }
+
         &:last-child {
            margin-right: 0;
         }
@@ -26,20 +41,9 @@
             text-decoration: none;   
         }
 
-        &:hover {
-
-            .navbarLink {
-                color: $--red;
-            }
-
-            svg {
-                transform: scale(1, -1);
-                
-                & path {
-                 fill: $--red;
-                }
-            }
-        }
     }
+    
 }
+
+
    

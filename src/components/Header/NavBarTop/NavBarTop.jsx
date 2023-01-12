@@ -1,39 +1,19 @@
 import React from "react";
 import styles from "./NavBarTop.module.scss";
+import { Link } from "react-router-dom";
 
-const DataNavBarTop = [
-  {
-    id: 1,
-    text: "Car selection",
-  },
-  {
-    id: 2,
-    text: "About",
-  },
-  {
-    id: 3,
-    text: "Service",
-  },
-  {
-    id: 4,
-    text: "Reviews",
-  },
-  {
-    id: 5,
-    text: "Contacts",
-  },
-];
+import { DataNavBarTop } from "../../../data/main.js";
 
 export default function NavBarTop() {
   return (
     <>
       <nav className={styles.navbarTop}>
         <ul>
-          {DataNavBarTop.map((el) => (
-            <li className={styles.navbarItem} key={el.id}>
-              <a className={styles.navbarLink} href="#">
+          {DataNavBarTop.map((el, index) => (
+            <li className={styles.navbarItem} key={index}>
+              <Link className={styles.navbarLink} href="#">
                 {el.text}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

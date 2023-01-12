@@ -1,4 +1,6 @@
 @import '../../../assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
 
 .navbarTop {
     
@@ -11,11 +13,7 @@
 
     .navbarLink {
         text-decoration: none;
-        
-        &:hover {
-            color: $--red;
-            text-decoration: underline;
-        }
+        @include link-border;
     }
  }
 }

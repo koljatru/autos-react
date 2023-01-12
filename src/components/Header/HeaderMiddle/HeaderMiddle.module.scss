@@ -34,7 +34,7 @@
             top: 0;
         }
 
-        &:after {
+        &::after {
             bottom: 0;
         }
 
@@ -46,7 +46,31 @@
             border-radius: 2px;
             transition: $--userTransition;
         }
+
+        &.active {
+            &::before {
+                top: 9px;
+                transform: rotate(135deg);
+            }
+    
+            &::after {
+                bottom: 9px;
+                transform: rotate(-135deg);
+            }
+
+            & .line {
+                width: 0;
+            }
+        }
+        &:hover {
+            .line,
+            &::before,
+            &:after  {
+            background-color: $--red;
+        }
+        }
     }
+
 
     .logo {
         padding-right: 40px;

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./NavTopContact.module.scss";
+
 import iconPhone from "../../../images/header/phone.svg";
 
 export default function NavTopContact() {

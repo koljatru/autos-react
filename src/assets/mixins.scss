@@ -29,7 +29,7 @@
     white-space: nowrap;
     cursor: pointer;
     z-index: 1;
-    transition: all 0.2s ease-in-out;
+    transition: $--userTransition;
     border: none;
     &:hover {
         box-shadow: $--box-shadow-btn;
@@ -71,5 +71,29 @@
     background-color: $--red;
 }
 
+@mixin link-border {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: auto;
+            right: 0;
+            width: 0;
+            bottom: -1px;
+            height: 1px;
+            background: $--red;
+            border-radius: 1px;
+            transition: $--userTransition;
+        }
+
+        &:hover {
+            &:before {
+                    width: 100%;
+                    right: auto;
+                    left: 0;
+            }
+        }
+}
 
 
