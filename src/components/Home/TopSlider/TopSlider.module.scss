@@ -1,0 +1,199 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+.TopSlider {
+    border-radius: $--border-radius;
+    margin-bottom: 40px;
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translate3d(0,5%,0)
+        }
+        100% {
+            opacity: 1;
+            transform: translate3d(0,0,0)
+        }
+    }
+
+    :global {
+        .swiper-button-prev {
+            left: 50px;
+            &:after {
+                content: "";
+                width: 34px;
+                height: 34px;
+                background: url(../../../images/top-slider/arrow-prew.svg) no-repeat center center;
+            }
+        }
+
+        .swiper-button-next {
+            right: 50px;
+            &:after {
+                content: "";
+                width: 34px;
+                height: 34px;
+                background: url(../../../images/top-slider/arrow-next.svg) no-repeat center center;
+            }
+        }
+
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+            bottom: 83px;
+        }
+
+        .swiper-pagination-bullet {
+            margin: 0 10px !important;
+            width: 11px;
+            height: 11px;
+            background-color: $--black;
+            opacity: 0.5 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $--white;
+            position: relative;
+            opacity: 1 !important;
+    
+            &:after {
+                content: "";
+                width: 21px;
+                height: 21px;
+                background-color: $--red;
+                position: absolute;
+                border-radius: 50%;
+                top: -5px;
+                left: -5px;
+                z-index: -1;
+            }
+        }
+
+    }
+
+
+   :global(.swiper-slide-active) {
+        .sliderInner {
+            animation: fadeInUp .3s both .3s
+        }
+   }
+
+
+    :global(.swiper-slide) {
+        height: 598px;
+
+        & > img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        .sliderInner {
+            padding-top: 80px;
+            position: relative;
+            
+            .title2 {
+                color: $--white;
+                max-width: 700px;
+                margin-bottom: 28px;
+            }
+
+            .title3 {
+                max-width: 500px;
+                margin-bottom: 28px;
+            }
+
+            .topText {
+                font-weight: 700;
+                color: $--white;
+                padding: 5px 60px;
+                display: inline-block;
+                background-color: $--red;
+                border-radius: 33px;
+                margin-bottom: 90px;
+            }
+
+            .offerText {
+                font-size: 35px;
+                line-height: 41px;
+                color: $--gray1;
+            }
+            
+            .offerText2 {
+                max-width: 510px;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 23px;
+                color: $--white;
+                margin-bottom: 45px;
+            }
+
+            .slideBlock {
+                &::after {
+                    content: "";
+                    background: url(../../../images/top-slider/cars.png) no-repeat;
+                    width: 1037px;
+                    height: 388px;
+                    position: absolute;
+                    top: 50%;
+                    right: -180px;
+                }
+            }
+
+            .slideBlock1 {
+                width: 650px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 50px;
+                row-gap: 30px;
+            }
+            
+            .slideBlock2 {
+                width: 474px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 50px;
+                row-gap: 20px;
+                
+                &::after {
+                    content: "";
+                    background: url(../../../images/top-slider/taxi.png) no-repeat;
+                    width: 817px;
+                    height: 350px;
+                    position: absolute;
+                    top: 130px;
+                    right: -50px;
+                }
+            }
+
+            .slideBlockItem {
+                @include df-aic;
+            }
+
+            .slideBlockItem1 {
+                @include df-aic;
+            }
+
+            .slideBlockText1,
+            .slideBlockText {
+                margin: 0;
+                margin-left: 20px;
+                font-size: 14px;
+                line-height: 16px;
+                color: $--white;
+            }
+
+            .slideBlockText1 {
+                color: $--black;
+            }
+        }
+    }
+    
+
+}
+    
+
+
+
+

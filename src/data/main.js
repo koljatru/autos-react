@@ -1,6 +1,7 @@
 import { ReactComponent as SearchIcon } from "../images/header/search.svg";
 import { ReactComponent as HeartIcon } from "../images/header/heart.svg";
 import { ReactComponent as SrawIcon } from "../images/header/stat.svg";
+import { ReactComponent as ArrowImg } from "../images/header/arrow-down.svg";
 
 import img1 from "../images/header/location.svg";
 import img2 from "../images/header/clock.svg";
@@ -59,6 +60,31 @@ import dropImg4 from "../images/header/drop-img/credit-4.png";
 import dropImg5 from "../images/header/drop-img/credit-5.png";
 import dropImg6 from "../images/header/drop-img/credit-6.png";
 import dropImg7 from "../images/header/drop-img/credit-7.png";
+
+import slide1 from "../images/top-slider/top-slider-1-bg.jpg";
+import slide2 from "../images/top-slider/top-slider-2-bg.jpg";
+import slide3 from "../images/top-slider/top-slider-3-bg.jpg";
+
+import checkImg1 from "../images/top-slider/check-slide1.svg";
+import checkImg2 from "../images/top-slider/check-slide2.svg";
+
+//swiperSlides
+export const topSlides = [
+  {
+    id: 1,
+    src: slide1,
+    title: "Big sale test fleet!",
+    text: "Get your price!",
+  },
+  {
+    id: 2,
+    src: slide2,
+    title: "Insurance policies no fees and surcharges",
+    text: "Calculation at once in several companies and official registration of the insurance policy",
+    img: checkImg1,
+  },
+  { id: 3, src: slide3, title: "Special Offer for cab cars", img: checkImg2 },
+];
 
 //DropMenu2
 export const DropMenu2 = [
@@ -124,31 +150,52 @@ export const DropMenu1 = [
 
 //DropMenu1Type
 export const DropMenu1Type = [
-  { src: carType1, text: "Suv" },
-  { src: carType2, text: "Sedan" },
-  { src: carType3, text: "Hatchback" },
-  { src: carType4, text: "Liftback" },
-  { src: carType5, text: "Universal" },
-  { src: carType6, text: "Van" },
-  { src: carType7, text: "Pickup" },
-  { src: carType8, text: "Crossover" },
-  { src: carType9, text: "Minivan" },
+  { src: carType1, title: "Suv" },
+  { src: carType2, title: "Sedan" },
+  { src: carType3, title: "Hatchback" },
+  { src: carType4, title: "Liftback" },
+  { src: carType5, title: "Universal" },
+  { src: carType6, title: "Van" },
+  { src: carType7, title: "Pickup" },
+  { src: carType8, title: "Crossover" },
+  { src: carType9, title: "Minivan" },
 ];
 
 //NavBarBottom
 export const DataNavBarBottom = [
-  { text: "Car catalog" },
-  { text: "Used cars" },
-  { text: "Credit and installment" },
-  { text: "Specials" },
-  { text: "Taxi on credit" },
+  {
+    text: "Car catalog",
+    img: <ArrowImg />,
+    type: "type1",
+    DropMenu1,
+    DropMenu1Type,
+  },
+  {
+    text: "Used cars",
+    img: <ArrowImg />,
+    type: "type2",
+    DropMenu2,
+  },
+  {
+    text: "Credit and installment",
+    img: <ArrowImg />,
+    type: "type3",
+    DropMenu2,
+  },
+  {
+    text: "Specials",
+    img: <ArrowImg />,
+    type: "type4",
+    DropMenu2,
+  },
+  { text: "Taxi on credit", type: "type5" },
 ];
 
 //UserList
 export const DataUserList = [
-  { title: "10", item: <HeartIcon /> },
-  { title: "12", item: <SrawIcon /> },
-  { item: <SearchIcon /> },
+  { type: "type1", title: "10", item: <HeartIcon /> },
+  { type: "type2", title: "12", item: <SrawIcon /> },
+  { type: "search", item: <SearchIcon /> },
 ];
 
 //HeaderTop

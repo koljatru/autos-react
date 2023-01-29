@@ -5,4 +5,15 @@
     position: fixed;
     z-index: 2;
     background-color: $--white;
+    top: 0;
+    transition: $--userTransition;
+
+    &.active {
+        top: -($--innerTopHeight);
+        
+        :global(.BurgerMenu_BurgerMenu__vtkKx) {
+            top: calc(197px - $--innerTopHeight);
+        }
+    }
+    
 }

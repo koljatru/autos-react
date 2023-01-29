@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Search.module.scss";
 
 import imgSearch from "../../../images/header/search.svg";

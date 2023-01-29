@@ -1,0 +1,122 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/mixins.scss';
+
+.dropMenu {
+    position: absolute;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    background-color: $--white;
+    z-index: 3;
+    transition: $--userTransition;
+    margin-top: 29px;
+    border-top: 1px solid $--gray3;
+    
+    .inner {
+        padding-top: 60px;
+        
+        .top {
+            grid-template-columns: repeat(6, 1fr);
+            row-gap: 20px;
+            display: grid;
+
+            .item {
+                @include df-aic;
+
+                .text {
+                    margin-left: 13px;
+                    @include link-border;
+                }
+            }
+        }
+
+        .bottom {
+            margin-top: 74px;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+
+            .itemBottom {
+                @include df-fdc;
+                align-items: center;
+                max-width: 91px;
+
+                .text {
+                    color: $--gray1;
+                    font-size: 14px;
+                    margin-top: 5px;
+                    @include link-border;
+                    
+                    &:hover {
+                        color: $--red;
+                    }
+                }
+            }
+        }
+
+        .cardInner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 31px;
+
+            .card {
+                padding: 25px;
+                border-radius: $--border-radius;
+                position: relative;
+                min-width: 447px;
+                height: 196px;
+                overflow: hidden;
+                @include df-fdc;
+                box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.06);
+
+                & img {
+                    background-size: cover;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    z-index: -1;
+                }
+
+                .title {
+                    font-size: 20px;
+                    line-height: 23px;
+                    margin-bottom: 4px;
+                }
+
+                .text {
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: $--gray1;
+                    margin: 0;
+                }
+
+                .btn {
+                    @include btn-card;
+                    padding: 0 21px;
+                    font-size: 14px;
+                    line-height: 16px;
+                    background: rgba($--gray2, 0.5);
+                    border-radius: 6px;
+                    margin-top: auto;
+                    width: 142px;
+                    transition: $--userTransition;
+
+                    &:hover {
+                        background: rgba($--gray2, 0.7);
+                    }
+
+                    &:active {
+                        background: rgba($--gray2, 0.9);
+                        transform: scale(0.97);
+                    }
+                }
+            }
+        }
+
+    }
+
+    
+
+ }

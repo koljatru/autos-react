@@ -1,17 +1,27 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import DropMenu from "../DropMenu/DropMenu";
+
+import useOutside from "../../../hooks/useOutside";
+
 import styles from "./DropDown.module.scss";
 
-export default function DropDown(index) {
-  console.log(index);
-  //   const [isHovering, setIsHovering] = useState(false);
+export default function DropDown({ data }) {
+  const { ref, isShow, setIsShow } = useOutside(false);
+  const { text, img, type } = data;
 
-  //   const handleMouseOver = () => {
-  //     setIsHovering(true);
-  //   };
+  const dropHandler = () => {
+    setIsShow(!isShow);
+  };
 
-  //   const handleMouseOut = () => {
-  //     setIsHovering(false);
-  //   };
-
-  return <div className={styles.DropDown}>DropDown</div>;
+  return (
+    <>
+      <li className={styles.navbarItem} ref={ref}>
+        <Link className={styles.navbarLink} onClick={dropHandler} to="#">
+          {text}
+        </Link>
+        {img}
+        {isShow && type !== "type5" && <DropMenu {...data} />}
+      </li>
+    </>
+  );
 }

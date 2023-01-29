@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavTopContact from "../NavTopContact/NavTopContact";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
@@ -7,14 +6,17 @@ import styles from "./HeaderMiddle.module.scss";
 
 import Logo from "../../../images/header/logo.svg";
 
-export default function HeaderMiddle() {
-  const [burgerActive, setBurgerActive] = useState(false);
-  const [menuActive, setmenuActive] = useState(false);
+import useOutside from "../../../hooks/useOutside";
 
-  const burgerHandler = (e) => {
-    e.preventDefault();
-    setBurgerActive(!burgerActive);
-    setmenuActive(!menuActive);
+export default function HeaderMiddle() {
+  const { ref, isShow, setIsShow, setisActive, isActive } = useOutside(
+    false,
+    false
+  );
+
+  const burgerHandler = () => {
+    setisActive(!isActive);
+    setIsShow(!isShow);
   };
 
   return (
@@ -22,16 +24,19 @@ export default function HeaderMiddle() {
       <div className="container">
         <div className={styles.inner}>
           <div className={styles.left}>
-            <button
-              className={
-                burgerActive
-                  ? styles["burger"] + " " + styles.active
-                  : styles["burger"]
-              }
-              onClick={burgerHandler}
-            >
-              <span className={styles.line}></span>
-            </button>
+            <div ref={ref}>
+              <button
+                className={
+                  isActive
+                    ? styles["burger"] + " " + styles.active
+                    : styles["burger"]
+                }
+                onClick={burgerHandler}
+              >
+                <span className={styles.line}></span>
+              </button>
+              <BurgerMenu isShow={isShow} />
+            </div>
             <Link to="/" className={styles.logo}>
               <img src={Logo} alt="logo" />
             </Link>
@@ -41,7 +46,6 @@ export default function HeaderMiddle() {
           </div>
           <NavBarTop />
           <NavTopContact />
-          <BurgerMenu menuActive={menuActive} />
         </div>
       </div>
     </div>

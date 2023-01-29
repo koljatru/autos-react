@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./FooterMiddle.module.scss";
 
 export default function FooterMiddle() {

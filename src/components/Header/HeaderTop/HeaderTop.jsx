@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./HeaderTop.module.scss";
 import { DataHeaderTop } from "../../../data/main.js";
