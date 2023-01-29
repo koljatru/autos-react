@@ -1,4 +1,3 @@
-import React from "react";
 import NavBarBottom from "../NavBarBottom/NavBarBottom";
 import UserList from "../UserList/UserList";
 import styles from "./HeaderBottom.module.scss";

@@ -1,18 +1,41 @@
-import React from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";
 import styles from "./BurgerMenu.module.scss";
+import classNames from "classnames";
 
 import { creditMenu, catalogAuto } from "../../../data/main.js";
 
-export default function BurgerMenu({ menuActive }) {
+export default function BurgerMenu({ isShow }) {
+  const burgerMenu1 = useMemo(() => {
+    if (Array.isArray(creditMenu)) {
+      return creditMenu.map((el, index) => {
+        return (
+          <li key={index} className={styles.link}>
+            <Link to="#">{el.title}</Link>
+          </li>
+        );
+      });
+    }
+  }, [creditMenu]);
+
+  const burgerMenu2 = useMemo(() => {
+    if (Array.isArray(catalogAuto)) {
+      return catalogAuto.map((el, index) => {
+        return (
+          <li key={index} className={styles.link}>
+            <Link to="#">{el.name}</Link>
+          </li>
+        );
+      });
+    }
+  }, [catalogAuto]);
+
   return (
     <div
-      className={
-        menuActive
-          ? styles["BurgerMenu"] + " " + styles.active
-          : styles["BurgerMenu"]
-      }
+      className={classNames(styles.BurgerMenu, {
+        [styles.active]: isShow,
+      })}
     >
       <div className="container">
         <Search />
@@ -21,13 +44,7 @@ export default function BurgerMenu({ menuActive }) {
           <div className={styles.menuLeft}>
             <div className={styles.item}>
               <h3 className={styles.title}>Credit and installment</h3>
-              <ul>
-                {creditMenu.map((el, index) => (
-                  <li key={index} className={styles.link}>
-                    <Link to="#">{el.title}</Link>
-                  </li>
-                ))}
-              </ul>
+              <ul>{burgerMenu1}</ul>
             </div>
 
             <div className={styles.item}>
@@ -56,28 +73,16 @@ export default function BurgerMenu({ menuActive }) {
           </div>
 
           <div className={styles.menuRight}>
-            <h3 className={styles.title}>Used cars</h3>
+            <h3 className={styles.title}>Car catalog</h3>
             <div className={styles.col}>
-              <ul>
-                {catalogAuto.map((el, index) => (
-                  <li key={index} className={styles.link}>
-                    <Link to="#">{el.name}</Link>
-                  </li>
-                ))}
-              </ul>
+              <ul>{burgerMenu2}</ul>
             </div>
           </div>
 
           <div className={styles.menuRight}>
             <h3 className={styles.title}>Used cars</h3>
             <div className={styles.col}>
-              <ul>
-                {catalogAuto.map((el, index) => (
-                  <li key={index} className={styles.link}>
-                    <a to="#">{el.name}</a>
-                  </li>
-                ))}
-              </ul>
+              <ul>{burgerMenu2}</ul>
             </div>
           </div>
         </div>

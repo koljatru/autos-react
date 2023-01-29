@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./FooterBottom.module.scss";
 
 export default function FooterBottom() {

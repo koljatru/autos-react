@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./NavBarTop.module.scss";
 import { Link } from "react-router-dom";
 
@@ -11,7 +10,7 @@ export default function NavBarTop() {
         <ul>
           {DataNavBarTop.map((el, index) => (
             <li className={styles.navbarItem} key={index}>
-              <Link className={styles.navbarLink} href="#">
+              <Link className={styles.navbarLink} to="#">
                 {el.text}
               </Link>
             </li>

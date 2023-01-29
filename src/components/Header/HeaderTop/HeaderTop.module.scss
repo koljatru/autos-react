@@ -5,7 +5,7 @@
     background-color: $--gray3;
 
     .inner {
-        height: 43px;
+        height: $--innerTopHeight;
         @include df-aic;
     }
 

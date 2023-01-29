@@ -1,16 +1,35 @@
 @import '/src/assets/variables.scss';
 @import '/src/assets/mixins.scss';
 
-.DropDown {
-    position: absolute;
-    width: 100%;
-    background-color: $--white;
-    // left: 0;
-    z-index: 3;
-    transition: $--userTransition;
-    // height: 100vh;
-    visibility: hidden;
-    opacity: 0;
-}
 
+    .navbarItem {
+        margin-right: 86px;
+        
+         &:last-child {
+            margin-right: 0;
+         }
+         
+         svg {
+             cursor: pointer;
+             width: 12px;
+             height: 7px;
+             transition: $--userTransition;
+             margin-left: 10px;
+             vertical-align: middle;
+
+             &.active {
+                transform: scale(1, -1);
+                & path {
+                    fill: $--red;
+                }
+             }
+         }
+         
+         .navbarLink {
+             font-weight: 700;
+             text-transform: uppercase;
+             text-decoration: none;   
+         }
+
+     }
 
